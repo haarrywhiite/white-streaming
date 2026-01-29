@@ -17,14 +17,6 @@
 <body>
     <nav>
         <a href="index.html" class="logo">White Streaming</a>
-        <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-            </svg>
-        </button>
         <ul class="nav-links">
             <li><a href="index.html">Portada</a></li>
             <li><a href="videos.html">Vídeos</a></li>
@@ -33,9 +25,19 @@
             <li><a href="contacte.html" class="active">Contacte</a></li>
             <li><a href="subscripcio.html">Subscriure's</a></li>
         </ul>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Canviar tema">
-            <!-- Icon injected by JS -->
-        </button>
+        <div class="nav-controls" style="display: flex; align-items: center; gap: 0.5rem;">
+            <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Canviar tema">
+                <!-- Icon injected by JS -->
+            </button>
+        </div>
     </nav>
 
     <main class="container">
