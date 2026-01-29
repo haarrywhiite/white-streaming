@@ -4,14 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosaltres - StreamCat</title>
+    <title>Sobre Nosaltres - White Streaming</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <script>
+        const currentTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
 </head>
 
 <body>
     <nav>
-        <a href="index.html" class="logo">StreamCat</a>
+        <a href="index.html" class="logo">White Streaming</a>
         <ul class="nav-links">
             <li><a href="index.html">Portada</a></li>
             <li><a href="videos.html">Vídeos</a></li>
@@ -30,7 +35,8 @@
 
         <div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
             <p style="margin-bottom: 2rem; font-size: 1.1rem;">
-                StreamCat va néixer amb un objectiu clar: crear un espai on el contingut en català pugui brillar. En un
+                White Streaming va néixer amb un objectiu clar: crear un espai on el contingut en català pugui brillar.
+                En un
                 món digital saturat, volem oferir una plataforma curada, de qualitat i accessible per a tothom.
             </p>
 
@@ -52,7 +58,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 StreamCat. Tots els drets reservats.</p>
+        <p>&copy; 2024 White Streaming. Tots els drets reservats.</p>
     </footer>
 
     <script src="script.js"></script>
