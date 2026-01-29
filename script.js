@@ -93,4 +93,57 @@ document.addEventListener('DOMContentLoaded', () => {
             videoGrid.appendChild(card);
         });
     }
+
+    // --- Home Page Trending Logic ---
+    const homeVideoGrid = document.getElementById('home-trending-videos');
+    const homeAudioGrid = document.getElementById('home-trending-audios');
+
+    if (homeVideoGrid && homeAudioGrid) {
+        // 1. Random 3 Videos
+        // (Re-using videoPool would be ideal, but it's scoped above. 
+        // For simplicity in this static setup, duplicating the top safe ones or moving the pool out.)
+        // Let's redefine a small safe pool here to avoid scope issues without major refactor.
+        const homeVideoPool = [
+            { id: "kJQP7kiw5Fk", title: "Luis Fonsi - Despacito" },
+            { id: "JGwWNGJdvx8", title: "Ed Sheeran - Shape of You" },
+            { id: "OPf0YbXqDm0", title: "Mark Ronson - Uptown Funk" },
+            { id: "09R8_2nJtjg", title: "Maroon 5 - Sugar" },
+            { id: "fJ9rUzIMcZQ", title: "Queen - Bohemian Rhapsody" },
+            { id: "CevxZvSJLk8", title: "Katy Perry - Roar" }
+        ];
+
+        // Fisher-Yates Shuffle local implementation
+        for (let i = homeVideoPool.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [homeVideoPool[i], homeVideoPool[j]] = [homeVideoPool[j], homeVideoPool[i]];
+        }
+
+        homeVideoGrid.innerHTML = '';
+        homeVideoPool.slice(0, 3).forEach(video => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <iframe width="100%" height="200" src="https://www.youtube.com/embed/${video.id}" title="${video.title}" frameborder="0" allowfullscreen></iframe>
+                <h3 style="margin-top: 1rem; font-size: 1.1rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${video.title}</h3>
+            `;
+            homeVideoGrid.appendChild(card);
+        });
+
+        // 2. Random 3 Audios (Hardcoded list for Home)
+        const homeAudioPool = [
+            { type: 'playlist', id: '37i9dQZF1DXcBWIGoYBM5M' },
+            { type: 'album', id: '1DFixLWuPkv3KT3TnV35m3' },
+            { type: 'track', id: '4cOdK2wGLETKBW3PvgPWqT' }
+        ];
+        // No shuffle needed for audios, just show these 3 static "Featured" ones
+        homeAudioGrid.innerHTML = '';
+        homeAudioPool.forEach(audio => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/${audio.type}/${audio.id}?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            `;
+            homeAudioGrid.appendChild(card);
+        });
+    }
 });
