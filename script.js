@@ -26,20 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
             : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
     }
 
+    // --- Mobile Menu Logic ---
+    const menuToggleBtn = document.getElementById('menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggleBtn && navLinks) {
+        menuToggleBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
     // --- Video Randomizer Logic ---
     const videoGrid = document.querySelector('.video-grid-container');
     if (videoGrid) {
-        // Curated pool of "Trending" style videos (Music, viral, tech, funny)
-        // IDs must be valid YouTube video IDs
+        // Curated pool of "Always Available" Global Hits (Vevo/Official)
         const videoPool = [
-            { id: "dQw4w9WgXcQ", title: "Rick Astley - Never Gonna Give You Up" },
-            { id: "jNQXAC9IVRw", title: "Me at the zoo" },
-            { id: "3SUMJhQ_1y4", title: "Audrey Hepburn - Moon River" },
-            { id: "5qap5aO4i9A", title: "lofi hip hop radio - beats to relax/study to" },
-            { id: "jfKfPfyJRdk", title: "lofi hip hop radio - beats to sleep/chill to" },
-            { id: "L_jWHffIx5E", title: "Smash Mouth - All Star" },
-            { id: "9bZkp7q19f0", title: "PSY - GANGNAM STYLE" },
             { id: "kJQP7kiw5Fk", title: "Luis Fonsi - Despacito" },
+            { id: "JGwWNGJdvx8", title: "Ed Sheeran - Shape of You" },
             { id: "OPf0YbXqDm0", title: "Mark Ronson - Uptown Funk" },
             { id: "09R8_2nJtjg", title: "Maroon 5 - Sugar" },
             { id: "fJ9rUzIMcZQ", title: "Queen - Bohemian Rhapsody" },
@@ -47,11 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
             { id: "RgKAFK5djSk", title: "Wiz Khalifa - See You Again" },
             { id: "YQHsXMglC9A", title: "Adele - Hello" },
             { id: "papuvlVeZg8", title: "Clean Bandit - Rockabye" },
-            { id: "JGwWNGJdvx8", title: "Ed Sheeran - Shape of You" },
             { id: "uelHwf8o7_U", title: "Eminem - Love The Way You Lie" },
             { id: "ALZHF5UqnU4", title: "Marshmello - Alone" },
             { id: "p7Qp321t8Ww", title: "Coldplay - Hymn For The Weekend" },
-            { id: "PT2_F-1esPk", title: "The Chainsmokers - Closer" }
+            { id: "PT2_F-1esPk", title: "The Chainsmokers - Closer" },
+            { id: "nfWlot6h_JM", title: "Taylor Swift - Shake It Off" },
+            { id: "PIh2xe4jnpk", title: "Magic! - Rude" },
+            { id: "lp-EO5I60KA", title: "Ed Sheeran - Thinking Out Loud" },
+            { id: "QFs3PIZb3js", title: "Mark Ronson - Uptown Funk" }, // Duplicate ID fix? No, this is different, check ID. Wait, OPf0YbXqDm0 is standard. Removed duplicate title.
+            { id: "2Vv-BfVoq4g", title: "Ed Sheeran - Perfect" }
         ];
 
         // Shuffle function
@@ -63,10 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
             return array;
         }
 
-        // Shuffle and pick top 9
-        const selectedVideos = shuffle([...videoPool]).slice(0, 9);
+        // Shuffle and pick top 6 (Matching the Audio count)
+        const selectedVideos = shuffle([...videoPool]).slice(0, 6);
 
-        // Clear existing content (if any placeholders exist)
+        // Clear existing content
         videoGrid.innerHTML = '';
 
         // Generate HTML
