@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Àudios - StreamCat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">StreamCat</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Portada</a></li>
+            <li><a href="videos.html">Vídeos</a></li>
+            <li><a href="audios.html" class="active">Àudios</a></li>
+            <li><a href="sobre.html">Sobre Nosaltres</a></li>
+            <li><a href="contacte.html">Contacte</a></li>
+            <li><a href="subscripcio.html">Subscriure's</a></li>
+        </ul>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Canviar tema">
+            <!-- Icon injected by JS -->
+        </button>
+    </nav>
+
+    <main class="container">
+        <h2 class="section-title">Música i Podcasts</h2>
+
+        <div class="grid">
+            <!-- Placeholder Spotify Embeds -->
+            <div class="card">
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator"
+                    width="100%" height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+            <div class="card">
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3?utm_source=generator" width="100%"
+                    height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+            <div class="card">
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/track/4cOdK2wGLETKBW3PvgPWqT?utm_source=generator" width="100%"
+                    height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+            <div class="card">
+                <iframe style="border-radius:12px"
+                    src="https://open.spotify.com/embed/show/4rOoJ6Egrf8K2IrywzwOMk?utm_source=generator" width="100%"
+                    height="352" frameBorder="0" allowfullscreen=""
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 StreamCat. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
