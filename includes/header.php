@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ca" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo isset($pageTitle) ? $pageTitle : 'White Streaming'; ?></title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <script>
+        // Inline script to prevent white flash
+        const currentTheme = localStorage.getItem('theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.php" class="logo">White Streaming</a>
+        <ul class="nav-links">
+            <li><a href="index.php" class="<?php echo ($currentPage === 'index') ? 'active' : ''; ?>">Portada</a></li>
+            <li><a href="videos.php" class="<?php echo ($currentPage === 'videos') ? 'active' : ''; ?>">Vídeos</a></li>
+            <li><a href="audios.php" class="<?php echo ($currentPage === 'audios') ? 'active' : ''; ?>">Àudios</a></li>
+            <li><a href="sobre.php" class="<?php echo ($currentPage === 'sobre') ? 'active' : ''; ?>">Sobre Nosaltres</a></li>
+            <li><a href="contacte.php" class="<?php echo ($currentPage === 'contacte') ? 'active' : ''; ?>">Contacte</a></li>
+            <li><a href="subscripcio.php" class="<?php echo ($currentPage === 'subscripcio') ? 'active' : ''; ?>">Subscriure's</a></li>
+        </ul>
+        <div class="nav-controls" style="display: flex; align-items: center; gap: 0.5rem;">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Canviar tema">
+                <!-- Icon injected by JS -->
+            </button>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Menú">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
