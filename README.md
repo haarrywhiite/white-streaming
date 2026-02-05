@@ -24,9 +24,16 @@ This project uses a **hybrid approach** to satisfy two requirements:
 When you want to make changes:
 
 1.  Edit the **PHP** files (e.g., change `index.php` or `includes/header.php`).
-2.  Run the build script:
+2.  Commit and push to GitHub:
     ```bash
-    php build.php
+    git add .
+    git commit -m "Update site content"
+    git push origin main
     ```
-3.  Verify the changes.
-4.  Commit and push **both** types of files to GitHub.
+3.  **GitHub Actions** will automatically:
+    -   Run the build script.
+    -   Generate the `dist/` folder.
+    -   Deploy it to GitHub Pages.
+
+You do **not** need to run `php build.php` locally anymore, unless you want to verify changes before pushing.
+

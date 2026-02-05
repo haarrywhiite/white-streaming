@@ -1,6 +1,13 @@
 <?php
 // Build script to generate static HTML files from PHP source
 
+$outputDir = 'dist';
+
+// Create output directory if it doesn't exist
+if (!is_dir($outputDir)) {
+    mkdir($outputDir, 0755, true);
+}
+
 $pages = [
     'index',
     'audios',
@@ -12,9 +19,10 @@ $pages = [
 
 echo "Starting build process...\n";
 
+// 1. Generate HTML pages
 foreach ($pages as $page) {
     $phpFile = $page . '.php';
-    $htmlFile = $page . '.html';
+    $htmlFile = $outputDir . '/' . $page . '.html';
 
     if (file_exists($phpFile)) {
         echo "Building $htmlFile from $phpFile...\n";
@@ -37,4 +45,22 @@ foreach ($pages as $page) {
     }
 }
 
-echo "Build complete! Static HTML files generated.\n";
+// 2. Copy Assets
+$assets = ['styles.css', 'script.js'];
+foreach ($assets as $asset) {
+    $source = $asset;
+    $dest = $outputDir . '/' . $asset;
+
+    if (file_exists($source)) {
+        if (copy($source, $dest)) {
+            echo "Copied $source to $dest\n";
+        } else {
+            echo "ERROR: Failed to copy $source\n";
+        }
+    } else {
+        echo "WARNING: Asset $source not found\n";
+    }
+}
+
+echo "Build complete! Static site generated in '$outputDir/'.\n";
+
