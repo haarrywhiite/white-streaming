@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($pageTitle) ? $pageTitle : 'White Streaming'; ?></title>
+    <title>Vídeos - White Streaming</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +21,12 @@
     <nav>
         <a href="index.html" class="logo">White Streaming</a>
         <ul class="nav-links">
-            <li><a href="index.html" class="<?php echo ($currentPage === 'index') ? 'active' : ''; ?>">Portada</a></li>
-            <li><a href="videos.html" class="<?php echo ($currentPage === 'videos') ? 'active' : ''; ?>">Vídeos</a></li>
-            <li><a href="audios.html" class="<?php echo ($currentPage === 'audios') ? 'active' : ''; ?>">Àudios</a></li>
-            <li><a href="sobre.html" class="<?php echo ($currentPage === 'sobre') ? 'active' : ''; ?>">Sobre Nosaltres</a></li>
-            <li><a href="contacte.html" class="<?php echo ($currentPage === 'contacte') ? 'active' : ''; ?>">Contacte</a></li>
-            <li><a href="subscripcio.html" class="<?php echo ($currentPage === 'subscripcio') ? 'active' : ''; ?>">Subscriure's</a></li>
+            <li><a href="index.html" class="">Portada</a></li>
+            <li><a href="videos.html" class="active">Vídeos</a></li>
+            <li><a href="audios.html" class="">Àudios</a></li>
+            <li><a href="sobre.html" class="">Sobre Nosaltres</a></li>
+            <li><a href="contacte.html" class="">Contacte</a></li>
+            <li><a href="subscripcio.html" class="">Subscriure's</a></li>
         </ul>
         <div class="nav-controls" style="display: flex; align-items: center; gap: 0.5rem;">
             <button id="theme-toggle" class="theme-toggle" aria-label="Canviar tema">
@@ -42,3 +42,20 @@
             </button>
         </div>
     </nav>
+
+    <main class="container">
+        <h2 class="section-title">Vídeos Destacats</h2>
+
+        <div class="grid video-grid-container">
+            <!-- Videos will be injected here by script.js -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 White Streaming. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

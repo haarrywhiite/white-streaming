@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($pageTitle) ? $pageTitle : 'White Streaming'; ?></title>
+    <title>White Streaming - La teva plataforma de streaming</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +21,12 @@
     <nav>
         <a href="index.html" class="logo">White Streaming</a>
         <ul class="nav-links">
-            <li><a href="index.html" class="<?php echo ($currentPage === 'index') ? 'active' : ''; ?>">Portada</a></li>
-            <li><a href="videos.html" class="<?php echo ($currentPage === 'videos') ? 'active' : ''; ?>">Vídeos</a></li>
-            <li><a href="audios.html" class="<?php echo ($currentPage === 'audios') ? 'active' : ''; ?>">Àudios</a></li>
-            <li><a href="sobre.html" class="<?php echo ($currentPage === 'sobre') ? 'active' : ''; ?>">Sobre Nosaltres</a></li>
-            <li><a href="contacte.html" class="<?php echo ($currentPage === 'contacte') ? 'active' : ''; ?>">Contacte</a></li>
-            <li><a href="subscripcio.html" class="<?php echo ($currentPage === 'subscripcio') ? 'active' : ''; ?>">Subscriure's</a></li>
+            <li><a href="index.html" class="active">Portada</a></li>
+            <li><a href="videos.html" class="">Vídeos</a></li>
+            <li><a href="audios.html" class="">Àudios</a></li>
+            <li><a href="sobre.html" class="">Sobre Nosaltres</a></li>
+            <li><a href="contacte.html" class="">Contacte</a></li>
+            <li><a href="subscripcio.html" class="">Subscriure's</a></li>
         </ul>
         <div class="nav-controls" style="display: flex; align-items: center; gap: 0.5rem;">
             <button id="theme-toggle" class="theme-toggle" aria-label="Canviar tema">
@@ -42,3 +42,37 @@
             </button>
         </div>
     </nav>
+
+    <main>
+        <section class="hero">
+            <h1>Benvingut a <span>White Streaming</span></h1>
+            <p>La millor selecció de contingut audiovisual en català. Gaudeix de vídeos i música sense límits.</p>
+            <div class="cta-buttons">
+                <a href="videos.html" class="btn btn-primary">Veure Vídeos</a>
+                <a href="audios.html" class="btn btn-secondary">Escoltar Música</a>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">Contingut Destacat</h2>
+
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Vídeos Tendència</h3>
+            <div id="home-trending-videos" class="grid" style="margin-bottom: 4rem;">
+                <!-- Injected by JS -->
+            </div>
+
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem;">Àudios Populars</h3>
+            <div id="home-trending-audios" class="grid">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 White Streaming. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

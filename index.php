@@ -9,8 +9,8 @@ include 'includes/header.php';
             <h1>Benvingut a <span>White Streaming</span></h1>
             <p>La millor selecció de contingut audiovisual en català. Gaudeix de vídeos i música sense límits.</p>
             <div class="cta-buttons">
-                <a href="videos.php" class="btn btn-primary">Veure Vídeos</a>
-                <a href="audios.php" class="btn btn-secondary">Escoltar Música</a>
+                <a href="videos.html" class="btn btn-primary">Veure Vídeos</a>
+                <a href="audios.html" class="btn btn-secondary">Escoltar Música</a>
             </div>
         </section>
 
